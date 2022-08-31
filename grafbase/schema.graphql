@@ -10,4 +10,8 @@ type Todo @model {
   title: String! @unique
   complete: Boolean
   dueBy: DateTime
+  assignedTo: Email
+  host: IPAddress
+  reference: URL
+  metadata: JSON
 }
