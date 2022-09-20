@@ -1,3 +1,11 @@
+schema
+  @auth(
+    providers: [{ type: oidc, issuer: "{{ env.ISSUER_URL }}" }]
+    rules: [{ allow: groups, groups: ["backend", "admin"] }]
+  ) {
+  query: Query
+}
+
 type TodoList @model {
   id: ID!
   title: String! @unique
